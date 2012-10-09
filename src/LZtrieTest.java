@@ -23,7 +23,7 @@ public class LZtrieTest {
 					for(j = 0; j < i; j++)
 						test += r.nextInt(1);
 					result = encoder.encode(test);
-					assertEquals("Incorrect encoding!", LZDecoder.decode(result), test);
+					assertEquals("Incorrect encoding!", test, LZDecoder.decode(result));
 					test = "";
 					result = "";
 				}
@@ -41,7 +41,7 @@ public class LZtrieTest {
 	public void testEmptyString()
 	{
 		ILZ encoder = new LZtrie();
-		assertEquals("Empty string should encode to '0'",encoder.encode(""), "0");
+		assertEquals("Empty string should encode to '0'", "0", encoder.encode(""));
 	}
 
 	
